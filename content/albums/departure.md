@@ -1,7 +1,7 @@
 +++
 title = 'Departure'
 date = 2024-06-30T13:48:05+02:00
-draft = true
+draft = false
 image = "/images/departure.jpg"
 +++
 There's a unique kind of magic in this {{< theme_text_color >}}Nujabes{{< /theme_text_color >}}' album that makes it an unforgettable listening experience.  
