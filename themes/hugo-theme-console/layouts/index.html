@@ -15,7 +15,7 @@ Welcome to my personnal blog. <br> I'll be posting mostly about tech/music orien
             <p>
                 <div class="date">{{ .PublishDate.Format "Jan. 2, 2006" }}</div>
                 <h1><a href="{{ .Permalink }}" title="{{ .Title }}">> {{ .Title }}</a></h1>
-                <div class="summary">{{ .Summary }}..</div>
+                <div class="summary">{{ .Summary }}..(reading time ~ {{ .ReadingTime }} mins)</div>
             </p>
         </div>    
     {{ end }}
