@@ -1,7 +1,7 @@
 +++
 title = '剃刀乙女 (Kamisori Otome)'
 date = 2024-06-26T11:05:34+02:00
-draft = true
+draft = false
 image = "/images/kamisori-otome.jpg"
 +++
 I could recommend {{< theme_text_color >}}Ichiko Aoba{{< /theme_text_color >}}'s entire discography, but I'll focus on the album that first introduced me to her music.  

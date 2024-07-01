@@ -1,7 +1,7 @@
 +++
 title = 'XSS Attacks'
 date = 2024-06-26T11:08:42+02:00
-draft = true
+draft = false
 +++
 I had always heard of XSS attacks by name, but I had never encountered one until I worked on my [portfolio](https://olivierandriko.com) last week. Here's what the Vue.js debugger warned me about :
 
