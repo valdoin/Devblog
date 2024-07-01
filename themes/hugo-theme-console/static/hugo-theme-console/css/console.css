@@ -78,6 +78,22 @@ body {
     cursor : url(../assets/Cursor.svg), auto;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #2c2c2c;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #246A73;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #19565e;
+  }
+
 a,img {
     cursor: url(../assets/Pointer.svg), pointer;
 }
@@ -103,9 +119,16 @@ h1 {
 }
 
 .language-bash {
-    overflow: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
     margin-top: 0.4em;
 }
+
+.highlight pre {
+    display: inline-block; 
+    white-space: nowrap;
+}
+
 
 .content-column-content p,
 .content-column-content li {
@@ -195,10 +218,19 @@ figure {
         grid-template-columns: repeat(auto-fill, minmax(200px, 0.80fr));
     }
 
+    .language-bash {
+        margin-top: 0.7em;
+    }
+
     .language-bash span {
-        font-size: 12px;
-        word-break: break-word;
-        white-space: normal;
+        font-size: 13px;
+    }
+
+    .highlight pre {
+        display: block;
+        white-space: pre;
+        overflow-x:scroll;
+        max-width: 100%;
     }
 
     .summary {
@@ -326,14 +358,15 @@ figure {
 
     .post h1, .post h2 {
         padding-top: 0;
-        left : 0;
+        left: 0;
     }
 
     .posts-list .date {
-        display: inline-block;
-        position: absolute;
-        margin-left : 15em;
-        z-index: 400;
+        display: block;
+        position: relative;
+        margin-left: 0;
+        margin-top: 0.5em; 
+        margin-bottom: 0.5em;
         font-weight: bold;
         padding-top: 0;
     }

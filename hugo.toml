@@ -1,6 +1,6 @@
 baseURL = 'https://valdoinblog.netlify.app/'
 languageCode = 'en-us'
-title = 'C:/Users/valdoin/blog'
+title = 'C:/valdoin/blog'
 theme = "hugo-theme-console"
 summaryLength = 15
 

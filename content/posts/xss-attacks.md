@@ -3,7 +3,7 @@ title = 'XSS Attacks'
 date = 2024-06-26T11:08:42+02:00
 draft = false
 +++
-I had always heard of XSS attacks by name, but I had never encountered one until I worked on my [portfolio](https://olivierandriko.com) last week. Here's what the Vue.js debugger warned me about :
+I've always heard of XSS by name, but I had never come across it until I worked on my [portfolio](https://olivierandriko.com) last week. Here's what the Vue.js debugger warned me about :
 
 ![Vue Debugger Screenshot](../postsImg/xss1.png)
 
@@ -16,17 +16,17 @@ It consists of injecting your own code into any poorly secured website, leading 
 
 ## {{< theme_text_color >}}II. why ?{{< /theme_text_color >}}  
 
-Now you may wonder "but then what makes my website vulnerable to XSS ?". Here are some common factors that can make a website susceptible to XSS attacks :
+Now you may wonder "then what makes my website vulnerable to XSS ?". Here are some common factors that can make a website susceptible to XSS attacks :
 
 ### {{< theme_text_color >}}Lack of Input Validation and Sanitization{{< /theme_text_color >}}  
 
 - Directly Embedding User Input: If your website takes user input and directly embeds it into HTML, JavaScript, or other parts of the web page without proper validation or sanitization, it can be exploited.  
 
-- Examples: Comment sections, search boxes, contact forms ...
+- Examples: Comment sections, search fields, contact forms ...
 
 ### {{< theme_text_color >}}Improper Output Encoding{{< /theme_text_color >}}  
 
-- Failure to Encode Output: Not encoding output correctly before rendering it in the browser can lead to XSS vulnerabilities. Different contexts (HTML, JavaScript, URL) require different encoding mechanisms.
+- Failure to Encode Output: Not encoding output correctly before rendering it in the browser can lead to XSS vulnerabilities. 
 
 - Examples: Displaying user-submitted content without HTML entity encoding or using [innerHTML](https://www.w3schools.com/jsref/prop_html_innerhtml.asp) to insert user data into the DOM without proper sanitization.
 
@@ -37,6 +37,6 @@ Now you may wonder "but then what makes my website vulnerable to XSS ?". Here ar
 - Example : Make sure all your website comes from trusted sources :  
 {{< highlight bash >}}Content-Security-Policy: default-src 'self' *.safe-source.example.net {{< /highlight >}} 
 
-    this rule will ensure all content is provided by the site itself or by subdomains of safe-sourceexample.net.
+    this rule will ensure all content is provided by the site itself or by subdomains of safe-source.example.net.
 
 ## {{< theme_text_color >}}III. how ?{{< /theme_text_color >}}  
