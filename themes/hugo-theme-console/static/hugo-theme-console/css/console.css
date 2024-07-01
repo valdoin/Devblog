@@ -98,6 +98,10 @@ a,img {
     cursor: url(../assets/Pointer.svg), pointer;
 }
 
+img {
+    width: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -208,6 +212,7 @@ figure {
 }
 
 .albums-list {
+    margin-top: 2em;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1em;
