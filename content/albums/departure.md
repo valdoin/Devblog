@@ -3,6 +3,8 @@ title = 'Departure'
 date = 2024-06-30T13:48:05+02:00
 draft = false
 image = "/images/departure.jpg"
+keywords = ['Nujabes','Ichiko Aoba','aruarian dance','Samurai Champloo']
+description = 'A look at Nujabes album "Departure", exploring its tracks and its influence on the anime "Samurai Champloo".'
 +++
 There's a unique kind of magic in this {{< theme_text_color >}}Nujabes{{< /theme_text_color >}}' album that makes it an unforgettable listening experience.  
 Made famous by the anime {{< theme_text_color >}}Samurai Champloo{{< /theme_text_color >}}, they both share an aesthetic that bridges different worlds.  

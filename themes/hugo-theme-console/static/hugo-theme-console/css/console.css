@@ -38,7 +38,7 @@
     --global-line-height: 1.6em;
     --page-width: 70em;
     --display-h1-decoration: 1;
-    --code-bg-color: #246A73;
+    --code-bg-color: none;
 }
 
 @media only screen and (max-width: 850px) {
@@ -127,6 +127,7 @@ h1 {
     white-space: nowrap;
     margin-top: 0.4em;
 }
+
 
 .highlight pre {
     display: inline-block; 
@@ -296,6 +297,9 @@ figure {
     content: none;
 }
 
+.post {
+    margin-bottom: 1.5em;
+}
 
 .posts-list {
     position: relative;
@@ -309,6 +313,13 @@ figure {
     margin-bottom: 5px;
 }
 
+.post-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    font-weight: bold;
+    font-style: italic;
+}
 
 .posts-list .date {
     display: inline-block;

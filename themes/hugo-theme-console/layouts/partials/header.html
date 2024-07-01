@@ -1,1 +1,3 @@
-<!-- Keep - override to add code to <header /> tag -->
+<meta name="keywords" content="{{ if .Params.keywords }}{{ delimit .Params.keywords ", " }}, valdoin, blog, valdoin blog, olivier andriko{{ else }}valdoin, blog, valdoin blog, olivier andriko{{ end }}">
+<meta name="description" content="{{ if .Params.Description }}{{ trim .Params.Description "\n" }}{{else if .Site.Params.Description}}{{ trim .Site.Params.Description "\n"}}{{ end }}">
+<link rel="canonical" href="{{ .Permalink }}" />

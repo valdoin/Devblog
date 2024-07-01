@@ -9,7 +9,7 @@
         <div class="post">
             <div class="date">{{ .PublishDate.Format "Jan. 2, 2006" }}</div>    
             <h1><a href="{{ .Permalink }}" title="{{ .Title }}">> {{ .Title }}</a></h1>
-            <div class = "summary">{{ .Summary }}..</div>
+            <div class = "summary">{{ .Summary }}.. (reading time ~ {{ .ReadingTime }} mins)</div>
         </div>
     {{ end }}
 {{ end }}

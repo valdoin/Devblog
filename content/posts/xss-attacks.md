@@ -2,6 +2,8 @@
 title = 'XSS Attacks'
 date = 2024-06-26T11:08:42+02:00
 draft = false
+keywords = ['XSS','XSS attacks','Cross site scripting','website defacement','data theft','browser exploitation framework']
+description = 'A comprehensive guide on XSS attacks: what they are, common vulnerabilities, and how to use tools like WebGoat and BeEF for testing and exploiting XSS vulnerabilities.'
 +++
 I've always heard of XSS by name, but I had never come across it until I worked on my [portfolio](https://olivierandriko.com) last week. Here's what the Vue.js debugger warned me about :
 

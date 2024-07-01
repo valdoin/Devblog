@@ -3,6 +3,12 @@ languageCode = 'en-us'
 title = 'C:/valdoin/blog'
 theme = "hugo-theme-console"
 summaryLength = 15
+enableRobotsTXT = true
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
 
 [markup]
   [markup.goldmark]
