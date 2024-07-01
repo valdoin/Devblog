@@ -38,7 +38,7 @@
     --global-line-height: 1.6em;
     --page-width: 70em;
     --display-h1-decoration: 1;
-    --code-bg-color: #fff;
+    --code-bg-color: #246A73;
 }
 
 @media only screen and (max-width: 850px) {
@@ -75,6 +75,11 @@ body {
     font-size: var(--global-font-size);
     background-color: #121212;
     margin-bottom: 75px;
+    cursor : url(../assets/Cursor.svg), auto;
+}
+
+a,img {
+    cursor: url(../assets/Pointer.svg), pointer;
 }
 
 h1,
@@ -97,9 +102,20 @@ h1 {
     margin-bottom: 150px;
 }
 
+.language-bash {
+    overflow: hidden;
+    margin-top: 0.4em;
+}
+
 .content-column-content p,
 .content-column-content li {
     color: #666;
+}
+
+.summary {
+    font-style: italic;
+    left : 1em;
+    position: relative;
 }
 
 .btn-ghost {
@@ -170,8 +186,27 @@ figure {
 
 .albums-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1em;
+}
+
+@media only screen and (max-width: 850px) {
+    .albums-list {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 0.80fr));
+    }
+
+    .language-bash span {
+        font-size: 12px;
+        word-break: break-word;
+        white-space: normal;
+    }
+
+    .summary {
+        font-style: italic;
+        left : 0;
+        position: relative;
+    }
+
 }
 
 .album {
@@ -212,6 +247,8 @@ figure {
 
 
 
+
+
 .terminal-prompt::after {
     -webkit-animation: cursor 1s infinite;
     animation: cursor 1s infinite;
@@ -231,9 +268,10 @@ figure {
 
 .post h1, .post h2 {
     padding-top: 0;
-    margin: 0;
+    left : 1em;
     margin-bottom: 5px;
 }
+
 
 .posts-list .date {
     display: inline-block;
@@ -288,17 +326,18 @@ figure {
 
     .post h1, .post h2 {
         padding-top: 0;
+        left : 0;
     }
 
     .posts-list .date {
         display: inline-block;
         position: absolute;
-        left: 120px;
-        width: 150px;
+        margin-left : 15em;
         z-index: 400;
         font-weight: bold;
         padding-top: 0;
     }
+
 
 
     .footer {

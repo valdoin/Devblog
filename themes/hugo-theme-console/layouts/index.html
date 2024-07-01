@@ -1,12 +1,12 @@
 {{ define "main" }}
 
-<h1>About</h1>
+<h1>> about</h1>
 
 <p>
-Welcome to my personnal devblog. <br> I'll be posting mostly about tech/music oriented stuff. <a href="https://github.com/valdoin/Devblog/">(github repo)</a>
+Welcome to my personnal blog. <br> I'll be posting mostly about tech/music oriented stuff. <a href="https://github.com/valdoin/Devblog/" target="_blank">(github repo)</a>
 </p>
 
-<h1><a href="/posts">Latest posts</a></h1>
+<h1><a href="/posts">> latest posts</a></h1>
 
 <div class="posts-list">
 {{ with .Site.GetPage "/posts" }}
@@ -14,19 +14,19 @@ Welcome to my personnal devblog. <br> I'll be posting mostly about tech/music or
         <div class="post">
             <p>
                 <div class="date">{{ .PublishDate.Format "Jan. 2, 2006" }}</div>
-                <h1><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h1>
-                {{ .Summary }}
+                <h1><a href="{{ .Permalink }}" title="{{ .Title }}">> {{ .Title }}</a></h1>
+                <div class="summary">{{ .Summary }}..</div>
             </p>
         </div>    
     {{ end }}
 {{ end }}
 </div>
 
-<h1><a href="/albums">Latest albums recommendations</a></h1>
+<h1><a href="/albums">> latest albums recommendations</a></h1>
 
 <div class="albums-list">
     {{ with .Site.GetPage "/albums" }}
-        {{ range first 4 (sort .Data.Pages "Date" "desc" (where .Pages ".Params.private" "!=" true))}}
+        {{ range first 3 (sort .Data.Pages "Date" "desc" (where .Pages ".Params.private" "!=" true))}}
             <div class="album">
                 <h2><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h2>
                 <div class="date">{{ .PublishDate.Format "Jan. 2, 2006" }}</div>
