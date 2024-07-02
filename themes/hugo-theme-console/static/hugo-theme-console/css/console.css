@@ -331,28 +331,24 @@ figure {
 }
 
 @media only screen and (max-width: 850px) {
-    .site-name {
-        width: 2ch;
-        overflow: hidden;
-        display: inline-block;
+    .terminal-logo {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .terminal-nav {
-        align-items: flex-start;
-        flex-direction: column;
-        display: flex;
+    .site-name {
+        max-width: 50%;
+        height: 10px;
     }
 
     .terminal-menu ul {
+        flex-direction: column;
         align-items: flex-start;
-        display: flex;
-        flex-direction: row;
-        justify-content: left;
-        margin-top: 0;
+        width: 100%;
     }
 
     .terminal-menu li {
-        margin-right: 20px;
+        margin-right: 0;
     }
 
     .logo {

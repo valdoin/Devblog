@@ -1,6 +1,6 @@
 baseURL = 'https://valdoin-blog.olivierandriko.com/'
 languageCode = 'en-us'
-title = 'C:/valdoin/blog'
+title = 'Valdoin Blog'
 theme = "hugo-theme-console"
 summaryLength = 15
 enableRobotsTXT = true
