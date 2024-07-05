@@ -9,7 +9,7 @@
       {{ .Site.Title }} - {{ $url := urls.Parse .Page.Name }}{{ $url.Path }}
     {{ end }}
     </title>
-    {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+    <meta name="description" content="Valdoin Blog made my Olivier ANDRIKO - Welcome to my personnal blog. I'll be posting mostly about tech/music oriented stuff.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <meta name="googlebot" content="index,follow,snippet,archive">
@@ -43,11 +43,6 @@
               <a href="{{ .Site.BaseURL }}" class="no-style site-name">C:/valdoin/blog</a>:~# 
               {{ range $index, $element := split $url "/" }}{{ $.Scratch.Add "path" $element }}{{ if ne $element "" }}<a href='{{ $.Scratch.Get "path" | absURL }}'>{{ . }}</a>/{{ $.Scratch.Add "path" "/" }}{{ end }}{{ end }}</div></header>
           <nav class="terminal-menu">
-            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
-                {{ range .Site.Params.navlinks }}
-                <li><a href="{{ absURL .url }}" typeof="ListItem">{{ .name }}</a></li>
-                {{ end }}
-            </ul>
           </nav>
         </div>
     </div>
