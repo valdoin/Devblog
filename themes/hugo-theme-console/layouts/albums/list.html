@@ -1,0 +1,25 @@
+{{ define "main" }}
+<h1>{{ .Page.Title }}</h1>
+<br/>
+{{ .Content }}
+
+<div class="posts-list">
+    {{ range sort .Data.Pages "Date" "desc" }}
+        {{ if not .Params.private }}
+            <div class="post">
+                <div class="date">{{ .PublishDate.Format "Jan. 2, 2006" }}</div>    
+                {{ $color := .Params.color | default "#246A73" }}
+                <h1>
+                    <a href="{{ .Permalink }}" title="{{ .Title }}"
+                       style="color: {{ $color }}; text-decoration: none;"
+                       onmouseover="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
+                       onmouseout="this.style.backgroundColor=''; this.style.color='{{ $color }}';">
+                       > {{ .Title }}
+                    </a>
+                </h1>
+                <div class="summary">{{ .Summary }}..</div>
+            </div>
+        {{ end }}
+    {{ end }}
+    </div>
+{{ end }}

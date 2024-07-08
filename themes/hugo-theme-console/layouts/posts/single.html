@@ -13,13 +13,13 @@
     {{ if .PrevInSection }}
         <a class="prev-post" href="{{ .PrevInSection.Permalink }}">« {{ .PrevInSection.Title }}</a>
     {{ else }}
-        <span class="prev-post disabled">« No previous post</span>
+        <span class="prev-post disabled">« no previous post</span>
     {{ end }}
 
     {{ if .NextInSection }}
         <a class="next-post" href="{{ .NextInSection.Permalink }}">{{ .NextInSection.Title }} »</a>
     {{ else }}
-        <span class="next-post disabled">No next post »</span>
+        <span class="next-post disabled">no next post »</span>
     {{ end }}
 </div>
 {{ template "_internal/disqus.html" . }}

@@ -5,6 +5,8 @@ draft = false
 image = "/images/kamisori-otome.jpg"
 keywords = ['Ichiko Aoba','Kamisori Otome','fuwarin','kokoro no sekai']
 description = 'A review of Ichiko Aoba debut album "Kamisori Otome", highlighting its delicate sound and ethereal guitar work.'
+color = '#535353'
+secondary_color = '#474747'
 +++
 I could recommend {{< theme_text_color >}}Ichiko Aoba{{< /theme_text_color >}}'s entire discography, but I'll focus on the album that first introduced me to her music.  
 It's her debut album, establishing the foundation of her musical style : a fragile, almost angelic voice with etheral guitar works.   

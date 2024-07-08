@@ -41,7 +41,7 @@
               {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }}
               {{ $.Scratch.Add "path" .Site.BaseURL }}
               <a href="{{ .Site.BaseURL }}" class="no-style site-name">C:/valdoin/blog</a>:~# 
-              {{ range $index, $element := split $url "/" }}{{ $.Scratch.Add "path" $element }}{{ if ne $element "" }}<a href='{{ $.Scratch.Get "path" | absURL }}'>{{ . }}</a>/{{ $.Scratch.Add "path" "/" }}{{ end }}{{ end }}</div></header>
+              {{ range $index, $element := split $url "/" }}{{ $.Scratch.Add "path" $element }}{{ if ne $element "" }}<a class = "test-{{ $.Scratch.Get "path" }}"href='{{ $.Scratch.Get "path" | absURL }} '>{{ . }}</a>/{{ $.Scratch.Add "path" "/" }}{{ end }}{{ end }}</div></header>
           <nav class="terminal-menu">
           </nav>
         </div>
@@ -54,3 +54,9 @@
     </div>
   </body>
 </html>
+
+<style>
+  :root {
+      --primary-color: {{ .Params.color | default "#246A73" }};
+  }
+</style>

@@ -1,1 +1,2 @@
-<span style="color: #246A73;">{{ .Inner }}</span>
+{{ $color := .Page.Params.color | default "#246A73" }}
+<span style="color: {{ $color }}">{{ .Inner }}</span>

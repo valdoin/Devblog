@@ -1,26 +1,37 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
-{{ .PublishDate.Format "Jan. 2, 2006" }} 
+{{ .PublishDate.Format "Jan. 2, 2006" }}
 {{ with .Params.linkedin }}
-    // <a href="{{ . }}">Linkedin</a>
+// <a href="{{ . }}">Linkedin</a>
 {{ end }}
 {{ with .Params.twitter }}
-    // <a href="{{ . }}">Twitter</a>
+// <a href="{{ . }}">Twitter</a>
 {{ end }}
-<br/><br/>
+<br /><br />
 {{ .Content }}
 <div class="post-navigation">
     {{ if .PrevInSection }}
-        <a class="prev-post" href="{{ .PrevInSection.Permalink }}">« {{ .PrevInSection.Title }}</a>
+    <a class="prev-post" href="{{ .PrevInSection.Permalink }}">« {{ .PrevInSection.Title }}</a>
     {{ else }}
-        <span class="prev-post disabled">« No previous post</span>
+    <span class="prev-post disabled">« no previous post</span>
     {{ end }}
 
     {{ if .NextInSection }}
-        <a class="next-post" href="{{ .NextInSection.Permalink }}">{{ .NextInSection.Title }} »</a>
+    <a class="next-post" href="{{ .NextInSection.Permalink }}">{{ .NextInSection.Title }} »</a>
     {{ else }}
-        <span class="next-post disabled">No next post »</span>
+    <span class="next-post disabled">no next post »</span>
     {{ end }}
 </div>
 {{ template "_internal/disqus.html" . }}
+
+<style>
+    ::-webkit-scrollbar-thumb {
+        background: {{.Params.color | default "#246A73"}};
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: {{.Params.secondary_color | default "#19565e" }};
+    }
+</style>
+
+
 {{ end }}

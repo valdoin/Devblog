@@ -79,7 +79,11 @@ Result :
 
 This issue might be disturbing and humiliating for the website owner, but this is actually quite easy to fix and no harm has been caused to users.  
 However XSS attacks can lead to data theft which is a much more significant problem.
-I'll show you how this works using the [BeEF project](https://beefproject.com/). Once you've downloaded or cloned the project, you must run the following scripts from the root directory:
+I'll show you how this works using the [BeEF project](https://beefproject.com/). The BeEF (Browser Exploitation Framework) project is an open-source penetration testing tool that focuses on web browsers. It allows to assess the security posture of a website by using client-side attack vectors.  
+
+**Disclosure** : Please be aware that while the BeEF framework is a powerful tool for understanding and demonstrating the impact of browser vulnerabilities, it must be used responsibly and legally. Exploiting vulnerabilities without permission is illegal and unethical. This demonstration is for educational purposes only, and any misuse of this information is strictly prohibited.  
+
+Once you've downloaded or cloned the project, you must run the following scripts from the root directory:
 {{< highlight bash >}}./install{{< /highlight >}} (installs the required packages)
 {{< highlight bash >}}./beef{{< /highlight >}} (launches the program)
 

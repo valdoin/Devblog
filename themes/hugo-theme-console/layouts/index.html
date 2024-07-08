@@ -28,13 +28,22 @@ Welcome to my personnal blog. <br> I'll be posting mostly about tech/music orien
     {{ with .Site.GetPage "/albums" }}
         {{ range first 3 (sort .Data.Pages "Date" "desc" (where .Pages ".Params.private" "!=" true))}}
             <div class="album">
-                <h2><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h2>
+                {{ $color := .Params.color | default "#246A73" }}
+                <h2>
+                    <a href="{{ .Permalink }}" title="{{ .Title }}"
+                       style="color: {{ $color }}; text-decoration: none;"
+                       onmouseover="this.style.backgroundColor='{{ $color }}'; this.style.color='white';"
+                       onmouseout="this.style.backgroundColor=''; this.style.color='{{ $color }}';">
+                       {{ .Title }}
+                    </a>
+                </h2>
                 <div class="date">{{ .PublishDate.Format "Jan. 2, 2006" }}</div>
                 <img src="{{ .Params.image }}" alt="{{ .Title }} cover" class="img-resize">
             </div>
         {{ end }}
     {{ end }}
 </div>
+
 
 
 
