@@ -8,7 +8,7 @@ description = 'A review of Ichiko Aoba debut album "Kamisori Otome", highlightin
 color = '#535353'
 secondary_color = '#474747'
 +++
-I could recommend {{< theme_text_color >}}Ichiko Aoba{{< /theme_text_color >}}'s entire discography, but I'll focus on the album that first introduced me to her music.  
+I could recommend {{< theme_text_color >}}Ichiko Aoba{{< /theme_text_color >}}'s entire discography, but I chose the album that first introduced me to her music.  
 It's her debut album, establishing the foundation of her musical style : a fragile, almost angelic voice with etheral guitar works.   
 There's nothing overproduced, her music breathes and leaves room for silence.
 ## Release year : {{< theme_text_color >}}2010{{< /theme_text_color >}} 
