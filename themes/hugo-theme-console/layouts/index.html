@@ -26,7 +26,7 @@ Welcome to my personnal blog. <br> I'll be posting mostly about tech/music orien
 
 <div class="albums-list">
     {{ with .Site.GetPage "/albums" }}
-        {{ range first 3 (sort .Data.Pages "Date" "desc" (where .Pages ".Params.private" "!=" true))}}
+        {{ range first 4 (sort .Data.Pages "Date" "desc" (where .Pages ".Params.private" "!=" true))}}
             <div class="album">
                 {{ $color := .Params.color | default "#246A73" }}
                 <h2>
