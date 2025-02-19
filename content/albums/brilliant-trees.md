@@ -9,7 +9,7 @@ color = '#9D8A7A'
 secondary_color = '#625448'
 +++
 {{< theme_text_color >}}David Sylvian{{< /theme_text_color >}} began his underground career as the frontman of the glam rock band {{< theme_text_color >}}Japan{{< /theme_text_color >}}.  
-His debut solo album, {{< theme_text_color >}}Brilliant Trees{{< /theme_text_color >}}, showcases his evolution from the flamboyant Tokyo rock scene to a more ambient and experimental sound.  
+His debut solo album, {{< theme_text_color >}}Brilliant Trees{{< /theme_text_color >}}, showcases his evolution from the flashy Tokyo rock scene to a more ambient and experimental sound.  
 Collaborations with {{< theme_text_color >}}Ryuichi Sakamoto{{< /theme_text_color >}} highlight his ability to blend genres seamlessly, while Sylvian's velvet voice remains at the forefront.  
 This album marks his transition towards ambient music, without losing his rock roots, affirming his unique voice and artistic vision.
 ## Release year : {{< theme_text_color >}}1984{{< /theme_text_color >}} 
