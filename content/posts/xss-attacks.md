@@ -7,7 +7,7 @@ description = 'A comprehensive guide on XSS attacks: what they are, common vulne
 +++
 I've always heard of XSS by name, but I had never come across it until I worked on my [portfolio](https://olivierandriko.com) last week. Here's what the Vue.js debugger warned me about :
 
-![Vue Debugger Screenshot](../postsImg/xss-attacks/xss1.png)
+![Vue Debugger Screenshot](/posts_images/xss-attacks/xss1.png)
 
 That's when I started looking into this kind of attack, understanding how it works, and eventually trying it out.
 
@@ -52,30 +52,30 @@ then expose the app on your 8080 port (you might need {{< theme_text_color >}}  
 
 If everything went well, you can now visualize the website on {{< theme_text_color >}}localhost:8080/WebGoat{{< /theme_text_color >}}. 
 
-![WebGoat Login Page](../postsImg/xss-attacks/xss2.png)
+![WebGoat Login Page](/posts_images/xss-attacks/xss2.png)
 
 Register yourself as a new user then head to the third page of the Cross Site Scripting (stored) section.
 
-![Cross Site Scripting Section](../postsImg/xss-attacks/xss3.png)
+![Cross Site Scripting Section](/posts_images/xss-attacks/xss3.png)
 
 See that comment text field down there ? That's where the magic is gonna happen.
 
-![XSS Payload Exemple](../postsImg/xss-attacks/xss4.png)
+![XSS Payload Exemple](/posts_images/xss-attacks/xss4.png)
 
 As you can see, my comment appears harmless but actually loads a small script. While this script is not dangerous for the moment, it demonstrates that the text field lacks proper sanitization and allows us to run our own code into the website.
 
-![XSS Script Loaded](../postsImg/xss-attacks/xss5.png)
-![Harmless comment](../postsImg/xss-attacks/xss6.png)  
+![XSS Script Loaded](/posts_images/xss-attacks/xss5.png)
+![Harmless comment](/posts_images/xss-attacks/xss6.png)  
 
 Since my comment is stored in database, the script will be loaded each time for every browser that accesses this page.
 
 Here's a simple way to make it more malicious (simple [website defacement](https://en.wikipedia.org/wiki/Website_defacement)) :
 
-![Website Defacement Script](../postsImg/xss-attacks/xss7.png)  
+![Website Defacement Script](/posts_images/xss-attacks/xss7.png)  
 
 Result : 
 
-![Website pwned](../postsImg/xss-attacks/xss8.png) 
+![Website pwned](/posts_images/xss-attacks/xss8.png) 
 
 This issue might be disturbing and humiliating for the website owner, but this is actually quite easy to fix and no harm has been caused to users.  
 However XSS attacks can lead to data theft which is a much more significant problem.
@@ -89,38 +89,38 @@ Once you've downloaded or cloned the project, you must run the following scripts
 
 *NB : it might ask you to change your credentials before launching BeEF, default credentials are both "beef".*
 
-![BeEF credentials](../postsImg/xss-attacks/xss9.png) 
-![BeEF menu](../postsImg/xss-attacks/xss10.png) 
+![BeEF credentials](/posts_images/xss-attacks/xss9.png) 
+![BeEF menu](/posts_images/xss-attacks/xss10.png) 
 In this menu, look for any {{< theme_text_color >}}Hook{{< /theme_text_color >}} URL then copy it. A hook in the BeEF Framework is a piece of JavaScript code that is used to collect data and perform actions in the victim's browser.
 I will now inject this hook in every browser accessing the page we pwned before.
 
-![Hook injection](../postsImg/xss-attacks/xss11.png) 
+![Hook injection](/posts_images/xss-attacks/xss11.png) 
 
 As you can see the hook got correctly loaded into the website :
 
-![Inspect hook](../postsImg/xss-attacks/xss12.png) 
+![Inspect hook](/posts_images/xss-attacks/xss12.png) 
 
 Now back to the BeEF terminal menu, copy the UI URL linked to the chosen hook
 
-![Hook UI URL](../postsImg/xss-attacks/xss13.png) 
+![Hook UI URL](/posts_images/xss-attacks/xss13.png) 
 
 and paste it into your browser to access the attacker panel after entering the credentials you set up previously.
 
-![Attacker panel](../postsImg/xss-attacks/xss14.png) 
+![Attacker panel](/posts_images/xss-attacks/xss14.png) 
 
 This interface shows all the hooked machines along with their information. For example, here you can see the browser of my Ubuntu VM.
 
 In the "commands" tab, among many other actions you can choose which page will replace the hooked one. In my case I chose a generic login form that could trick unexperienced users.
 
-![Commands tab](../postsImg/xss-attacks/xss15.png) 
+![Commands tab](/posts_images/xss-attacks/xss15.png) 
 
 Here’s what the hooked comment section looks like on the victim's browser :
 
-![Hooked comment section](../postsImg/xss-attacks/xss16.png) 
+![Hooked comment section](/posts_images/xss-attacks/xss16.png) 
 
 When the user submits their input, you can view the captured data in the attacker panel.
 
-![Stolen credentials](../postsImg/xss-attacks/xss17.png) 
+![Stolen credentials](/posts_images/xss-attacks/xss17.png) 
 
 If your website stores sensitive information about your users, these credential leaks could be a disaster.
 
