@@ -1,19 +1,19 @@
 +++
-title = 'Why You Should Never Store Passwords in Plain Text'
+title = 'Why You Should Never Store Passwords as Plain Text'
 date = 2025-02-19T17:30:49+01:00
 draft = false
 keywords = ["password security", "password vulnerability", "hashing", "sha-256", "password hashing", "cryptography", "secure passwords", "storing passwords safely"]
-description = "Storing passwords in plain text is a massive security risk. Learn why hashing is essential and how SHA-256 works."
+description = "Storing passwords as plain text is a massive security risk. Learn why hashing is essential and how SHA-256 works."
 +++
 
-What happens when you sign up for a website? Where does your password go ? And more importantly can someone see it ?
+What happens when you sign up for a website ? Where does your password go ? And more importantly can someone see it ?
 Turns out, if a website is poorly designed, the answer is yes. And that’s a huge problem.  
 That's where {{< theme_text_color >}}hashing{{< /theme_text_color >}}   comes in.
 
 ## {{< theme_text_color >}}I. what ?{{< /theme_text_color >}}  
 
 {{< theme_text_color >}} Hashing {{< /theme_text_color >}} is a process that takes your password and transforms it into a fixed-length string of characters, using a mathematical function.
-Unlike encryption, which can be reversed with a key, hashing is one-way—once hashed, your original password is gone forever.
+Unlike encryption, which can be reversed with a key, hashing is a {{< theme_text_color >}}one-way process{{< /theme_text_color >}}, your original password is gone forever.
 
 For example if you hash the password "password123" with [SHA-256](https://en.wikipedia.org/wiki/SHA-2), you get : 
 {{< highlight bash >}} ef92b778bafe771e89245b89ecbcf99737512704f77a65a05a8b8d66f79152c4 {{< /highlight>}}
@@ -63,4 +63,4 @@ No data is sent to a server. Everything happens locally.
 ## {{< theme_text_color >}}IV. conclusion.{{< /theme_text_color >}}  
 
 {{< theme_text_color >}}Hashing{{< /theme_text_color >}} is one of the simplest but most effective ways to secure passwords.  
-If you're building a website, never store passwords in plain text.
+If you're building a website, never store passwords as plain text.

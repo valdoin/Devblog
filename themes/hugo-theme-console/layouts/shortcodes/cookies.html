@@ -1,0 +1,57 @@
+<div>
+    <button class="terminal-btn" onclick="showCookies()">> show cookies</button>
+    <p class="cookie-output" id="cookieOutput"></p>
+</div>
+
+<script>
+    function saveCookies() {
+        const cookies = document.cookie;
+        if (cookies) {
+            let history = JSON.parse(localStorage.getItem("cookieHistory")) || [];
+            history.push({ date: new Date().toLocaleString(), cookies: cookies });
+            localStorage.setItem("cookieHistory", JSON.stringify(history));
+        }
+    }
+
+    function showCookies() {
+        let history = JSON.parse(localStorage.getItem("cookieHistory")) || [];
+        const output = document.getElementById("cookieOutput");
+
+        if (history.length === 0) {
+            output.innerText = "No cookies found (or blocked by security settings)";
+            return;
+        }
+
+        output.innerHTML = "<strong>Tracked Cookies:</strong><br>";
+        history.forEach(entry => {
+            output.innerHTML += `<p><strong>${entry.date}:</strong> ${entry.cookies}</p>`;
+        });
+    }
+    saveCookies();
+</script>
+
+<style>
+    .terminal-btn {
+        background: none;
+        color: #246A73;
+        border: 1px solid #246A73;
+        font-family: monospace;
+        padding: 5px 10px;
+        cursor: pointer;
+        text-transform: lowercase;
+        margin-bottom: 1em;
+        cursor: url("/assets/Pointer.svg"), pointer;
+    }
+
+    .terminal-btn:hover {
+        background: #246A73;
+        color: #121212;
+    }
+
+    .cookie-output {
+        color: #246A73;
+        font-family: monospace;
+        word-wrap: break-word;
+        margin-top: 10px;
+    }
+</style>
