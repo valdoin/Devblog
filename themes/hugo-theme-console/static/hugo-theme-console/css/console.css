@@ -75,7 +75,7 @@ body {
     font-size: var(--global-font-size);
     background-color: #121212;
     margin-bottom: 75px;
-    cursor : url(../assets/Cursor.svg), auto;
+    cursor : url("/assets/Cursor.svg"), auto;
 }
 
 ::-webkit-scrollbar {
@@ -95,7 +95,7 @@ body {
   }
 
 a,img,button {
-    cursor: url(../assets/Pointer.svg), pointer;
+    cursor: url("/assets/Pointer.svg"), pointer;
 }
 
 img {
@@ -120,10 +120,6 @@ h6,
 
 h1 {
     margin-bottom: 150px;
-}
-
-.terminal-btn{
-    cursor: url(/assets/Pointer.svg), pointer;
 }
 
 .language-bash {
