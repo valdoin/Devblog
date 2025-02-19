@@ -1,9 +1,9 @@
 +++
 title = 'Why You Should Never Store Passwords in Plain Text'
 date = 2025-02-19T17:30:49+01:00
-draft = true
-keywords = []
-description = ''
+draft = false
+keywords = ["password security", "password vulnerability", "hashing", "sha-256", "password hashing", "cryptography", "secure passwords", "storing passwords safely"]
+description = "Storing passwords in plain text is a massive security risk. Learn why hashing is essential and how SHA-256 works."
 +++
 
 What happens when you sign up for a website? Where does your password go? And more importantly—can someone see it?
