@@ -22,19 +22,19 @@ Here are some common factors that can make a website susceptible to XSS attacks 
 
 ### {{< theme_text_color >}}Lack of Input Validation and Sanitization{{< /theme_text_color >}}  
 
-- Directly Embedding User Input: If your website takes user input and directly embeds it into HTML, JavaScript, or other parts of the web page without proper validation or sanitization, it can be exploited.  
+- Directly Embedding User Input : If your website takes user input and directly embeds it into HTML, JavaScript, or other parts of the web page without proper validation or sanitization, it can be exploited.  
 
-- Examples: Comment sections, search fields, contact forms ...
+- Examples : Comment sections, search fields, contact forms ...
 
 ### {{< theme_text_color >}}Improper Output Encoding{{< /theme_text_color >}}  
 
-- Failure to Encode Output: Not encoding output correctly before rendering it in the browser can lead to XSS vulnerabilities. 
+- Failure to Encode Output : Not encoding output correctly before rendering it in the browser can lead to XSS vulnerabilities. 
 
-- Examples: Displaying user-submitted content without HTML entity encoding or using [innerHTML](https://www.w3schools.com/jsref/prop_html_innerhtml.asp) to insert user data into the DOM without proper sanitization.
+- Examples : Displaying user-submitted content without HTML entity encoding or using [innerHTML](https://www.w3schools.com/jsref/prop_html_innerhtml.asp) to insert user data into the DOM without proper sanitization.
 
 ### {{< theme_text_color >}}Weak CSP{{< /theme_text_color >}}  
 
-- Weak or No CSP: [Content Security Policy](https://developer.mozilla.org/fr/docs/Web/HTTP/CSP) (CSP) helps mitigate XSS by restricting the sources from which scripts can be loaded and executed. An absent or poorly configured CSP can leave your site vulnerable.
+- Weak or No CSP : [Content Security Policy](https://developer.mozilla.org/fr/docs/Web/HTTP/CSP) (CSP) helps mitigate XSS by restricting the sources from which scripts can be loaded and executed. An absent or poorly configured CSP can leave your site vulnerable.
 
 - Example : Make sure all your website comes from trusted sources :  
 {{< highlight bash >}}Content-Security-Policy: default-src 'self' *.safe-source.example.net {{< /highlight >}} 

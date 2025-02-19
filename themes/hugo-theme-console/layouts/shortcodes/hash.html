@@ -1,0 +1,53 @@
+<style>
+    #passwordInput {
+        background-color: #121212;  
+        color: #246A73;         
+        border: 1px solid #246A73;
+        padding: 5px;
+        font-family: monospace;
+        width: 300px;
+    }
+
+    .terminal-btn {
+        background: none;
+        color: #246A73;
+        border: 1px solid #246A73;
+        font-family: monospace;
+        padding: 5px 10px;
+        cursor: pointer;
+        text-transform: lowercase;
+        margin-bottom: 1em;
+    }
+
+    .terminal-btn:hover {
+        background: #246A73;
+        color: #121212;
+    }
+
+    .hash-output {
+        color : #246A73;
+    }
+
+</style>
+
+<div>
+    <label for="passwordInput">Enter a password :</label>
+    <input type="password" id="passwordInput" placeholder="Type here..." />
+    <button class="terminal-btn" onclick="hashPassword()">> hash</button>
+    <p class="hash-output"><strong>SHA-256 Hash :</strong> <span id="hashOutput">...</span></p>
+</div>
+
+<script>
+    async function hashPassword() {
+        const input = document.getElementById("passwordInput").value;
+        if (!input) return;
+        
+        const encoder = new TextEncoder();
+        const data = encoder.encode(input);
+        const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        const hashHex = hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+
+        document.getElementById("hashOutput").innerText = hashHex;
+    }
+</script>
