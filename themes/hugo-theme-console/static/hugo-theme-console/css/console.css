@@ -94,7 +94,7 @@ body {
     background: #19565e;
   }
 
-a,img {
+a,img,button {
     cursor: url(../assets/Pointer.svg), pointer;
 }
 
@@ -120,6 +120,10 @@ h6,
 
 h1 {
     margin-bottom: 150px;
+}
+
+.terminal-btn{
+    cursor: url(/assets/Pointer.svg), pointer;
 }
 
 .language-bash {

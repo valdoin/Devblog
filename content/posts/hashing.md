@@ -6,7 +6,7 @@ keywords = ["password security", "password vulnerability", "hashing", "sha-256",
 description = "Storing passwords in plain text is a massive security risk. Learn why hashing is essential and how SHA-256 works."
 +++
 
-What happens when you sign up for a website? Where does your password go? And more importantly—can someone see it?
+What happens when you sign up for a website? Where does your password go ? And more importantly can someone see it ?
 Turns out, if a website is poorly designed, the answer is yes. And that’s a huge problem.  
 That's where {{< theme_text_color >}}hashing{{< /theme_text_color >}}   comes in.
 
