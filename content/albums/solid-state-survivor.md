@@ -2,7 +2,7 @@
 title = 'Solid State Survivor'
 date = 2024-07-08T10:02:29+02:00
 draft = false
-image = "/images/solid-state-survivor.jpg"
+image = "/albums_images/solid-state-survivor.jpg"
 keywords = ['YMO','Yellow Magic Orchestra','Ryuichi Sakamoto','Haruomi Hosono','Yukihiro Takahashi','Solid State Survivor']
 description = '"Solid State Survivor": The Album That Defined Synth-Pop and Its Lasting Impact'
 color = '#C02820'

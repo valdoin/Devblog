@@ -2,7 +2,7 @@
 title = 'Departure'
 date = 2024-06-30T13:48:05+02:00
 draft = false
-image = "/images/departure.jpg"
+image = "/albums_images/departure.jpg"
 keywords = ['Nujabes','Ichiko Aoba','aruarian dance','Samurai Champloo','Anime','Music samples']
 description = 'A look at Nujabes album "Departure", exploring its tracks and its influence on the anime "Samurai Champloo".'
 color = '#207EB5'

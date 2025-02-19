@@ -2,7 +2,7 @@
 title = '剃刀乙女 (Kamisori Otome)'
 date = 2024-06-26T11:05:34+02:00
 draft = false
-image = "/images/kamisori-otome.jpg"
+image = "/albums_images/kamisori-otome.jpg"
 keywords = ['Ichiko Aoba','Kamisori Otome','fuwarin','kokoro no sekai']
 description = 'A review of Ichiko Aoba debut album "Kamisori Otome", highlighting its delicate sound and ethereal guitar work.'
 color = '#535353'

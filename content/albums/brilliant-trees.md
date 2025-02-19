@@ -2,7 +2,7 @@
 title = 'Brilliant Trees'
 date = 2024-07-18T22:51:28+02:00
 draft = false
-image = "/images/brilliant-trees.jpg"
+image = "/albums_images/brilliant-trees.jpg"
 keywords = ['Brilliant Trees', 'David Sylvian', 'Ryuichi Sakamoto', 'Japan', 'David Bowie', 'Glamrock', 'Ambient music']
 description = 'David Sylvian is an underrated singed whose brilliance should have deserved better recognition.'
 color = '#9D8A7A'
