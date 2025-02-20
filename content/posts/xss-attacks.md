@@ -11,10 +11,14 @@ I've always heard of XSS by name, but I had never come across it until I worked 
 
 That's when I started looking into this kind of attack, understanding how it works, and eventually trying it out.
 
+---
+
 ## {{< theme_text_color >}}I. what ?{{< /theme_text_color >}}  
 
 [Cross-Site Scripting](https://en.wikipedia.org/wiki/Cross-site_scripting) (XSS) is one of, if not the most common security vulnerabilities along with SQL Injection and MITM.  
 It consists of injecting your own code into any poorly secured website, leading to data theft, session hijacking, defacement of websites and even distribution of malware.
+
+---
 
 ## {{< theme_text_color >}}II. why ?{{< /theme_text_color >}}  
 
@@ -40,6 +44,8 @@ Here are some common factors that can make a website susceptible to XSS attacks 
 {{< highlight bash >}}Content-Security-Policy: default-src 'self' *.safe-source.example.net {{< /highlight >}} 
 
     this rule will ensure all content is provided by the site itself or by subdomains of safe-source.example.net.
+
+---
 
 ## {{< theme_text_color >}}III. how ?{{< /theme_text_color >}}  
 To demonstrate simple XSS attacks, I'll use the [WebGoat project](https://owasp.org/www-project-webgoat/) which is an intentionally  insecure web app that allows you to test vulnerabilities.  
@@ -124,6 +130,10 @@ When the user submits their input, you can view the captured data in the attacke
 
 If your website stores sensitive information about your users, these credential leaks could be a disaster.
 
+---
+
 ## {{< theme_text_color >}}IV. conclusion.{{< /theme_text_color >}}  
 
 Never Trust User Inputs. That's it.
+
+---

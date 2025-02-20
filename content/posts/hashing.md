@@ -10,6 +10,8 @@ What happens when you sign up for a website ? Where does your password go ? And 
 Turns out, if a website is poorly designed, the answer is yes. And that’s a huge problem.  
 That's where {{< theme_text_color >}}hashing{{< /theme_text_color >}}   comes in.
 
+---
+
 ## {{< theme_text_color >}}I. what ?{{< /theme_text_color >}}  
 
 {{< theme_text_color >}} Hashing {{< /theme_text_color >}} is a process that takes your password and transforms it into a fixed-length string of characters, using a mathematical function.
@@ -19,6 +21,8 @@ For example if you hash the password "password123" with [SHA-256](https://en.wik
 {{< highlight bash >}} ef92b778bafe771e89245b89ecbcf99737512704f77a65a05a8b8d66f79152c4 {{< /highlight>}}
 
 No matter how many times you hash "password123", you’ll always get the same result. But even the slightest change (like "Password123") creates a completely different hash.
+
+---
 
 ## {{< theme_text_color >}}II. why ?{{< /theme_text_color >}}  
 
@@ -42,6 +46,8 @@ Instead, websites should store hashed passwords:
 | Bob  | d41d8cd98f00b204e9800998ecf8427e         |  
 | Charlie  | 098f6bcd4621d373cade4e832627b4f6         |   
 
+---
+
 ## {{< theme_text_color >}}III. how ?{{< /theme_text_color >}}  
 
 We'll take {{< theme_text_color >}} SHA-256{{< /theme_text_color >}}  as an example.  
@@ -60,7 +66,11 @@ To see how hashing works, enter a password below. We’ll hash it right here in 
 No data is sent to a server. Everything happens locally.  
 {{< hash >}}
 
+---
+
 ## {{< theme_text_color >}}IV. conclusion.{{< /theme_text_color >}}  
 
 {{< theme_text_color >}}Hashing{{< /theme_text_color >}} is one of the simplest but most effective ways to secure passwords.  
 If you're building a website, never store passwords as plain text.
+
+---

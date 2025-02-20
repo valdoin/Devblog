@@ -12,12 +12,16 @@ But here’s the thing: after you log in, the website doesn’t ask for your pas
 
 That's because it remembers you and that's exactly what {{< theme_text_color >}}cookies{{< /theme_text_color >}} were made for.
 
+---
+
 ## {{< theme_text_color >}}I. what ?{{< /theme_text_color >}}  
 
 {{< theme_text_color >}}Cookies{{< /theme_text_color >}} are small pieces of data stored in your browser that keep you authenticated.  
 But what if someone {{< theme_text_color >}}steals{{< /theme_text_color >}} your cookie? Well… then {{< theme_text_color >}}they become you{{< /theme_text_color >}}. 
 
 This is {{< theme_text_color >}}session hijacking{{< /theme_text_color >}}, and it’s one of the most dangerous web security threats. 
+
+---
 
 ## {{< theme_text_color >}}II. why ?{{< /theme_text_color >}}
 
@@ -36,6 +40,8 @@ A cookie might store this after you log in :
 
 This {{< theme_text_color >}}session ID{{< /theme_text_color >}} tells the server that the user is authenticated.  
 But if an attacker steals this cookie, they can use your account without needing your password.
+
+---
 
 ## {{< theme_text_color >}}III. how ?{{< /theme_text_color >}}
 
@@ -76,6 +82,8 @@ Options :
 
 ![Express.js session security check](/posts_images/session-hijacking/session-hijacking2.png)
 
+---
+
 ## {{< theme_text_color >}}IV. conclusion.{{< /theme_text_color >}}
 
 - Use {{< theme_text_color >}}HttpOnly{{< /theme_text_color >}} → Blocks JavaScript access to cookies.
@@ -86,3 +94,5 @@ Options :
 - {{< theme_text_color >}}Monitor{{< /theme_text_color >}} and {{< theme_text_color >}}invalidate{{< /theme_text_color >}} sessions → Enhances security.
 
 {{< theme_text_color >}}Session hijacking{{< /theme_text_color >}} is a serious security threat but by correctly configuring cookies, you can greatly reduce the risk and it is your job as a developer.
+
+---
