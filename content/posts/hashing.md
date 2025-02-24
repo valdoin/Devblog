@@ -1,5 +1,5 @@
 +++
-title = 'Why You Should Never Store Passwords as Plain Text'
+title = 'Password Hashing'
 date = 2025-02-19T17:30:49+01:00
 draft = false
 keywords = ["password security", "password vulnerability", "hashing", "sha-256", "password hashing", "cryptography", "secure passwords", "storing passwords safely"]
