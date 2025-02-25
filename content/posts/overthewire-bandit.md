@@ -131,4 +131,130 @@ To remove these unnecessary messages and only display relevant results I used [g
 
 ![Level 7 Solution](/posts_images/overthewire-bandit/overthewire-bandit10.png)
 
+And here's the password !
+
+---
+
+## {{< theme_text_color >}}Level 8.{{< /theme_text_color >}}
+
+In this one, we have to find the password located in a text file next to the word 'millionth'.
+
+![Level 8 Solution](/posts_images/overthewire-bandit/overthewire-bandit11.png)
+
+It's a really long file, so again we must filter these lines using [grep](https://manpages.ubuntu.com/manpages/bionic/en/man1/grep.1.html) :
+
+![Level 8 Solution](/posts_images/overthewire-bandit/overthewire-bandit12.png)
+
+---
+
+## {{< theme_text_color >}}Level 9.{{< /theme_text_color >}}
+
+The password is the only line that appears exactly once in the file.  
+In order to do that we must use a combination of [sort](https://manpages.ubuntu.com/manpages/focal/man1/sort.1.html) and [uniq](https://manpages.ubuntu.com/manpages/xenial/man1/uniq.1.html).  
+Since uniq only works on sorted input, we must first sort the file before filtering unique lines :
+
+Sort the file to group identical lines together :
+{{< highlight bash >}} sort data.txt{{< /highlight>}}
+
+Remove duplicates : 
+{{< highlight bash >}} uniq -u{{< /highlight>}}
+
+![Level 9 Solution](/posts_images/overthewire-bandit/overthewire-bandit14.png)
+
+Alternative approach by counting occurences : 
+
+![Level 9 Solution](/posts_images/overthewire-bandit/overthewire-bandit13.png)
+
+--- 
+
+## {{< theme_text_color >}}Level 10.{{< /theme_text_color >}}
+
+In this level, the password is hidden as one of the few human-readable strings and it is preceded by multiple '=' characters.
+
+Since the file contains a mix of binary and text data we need to extract human-readable strings first.  
+We can use [strings](https://manpages.ubuntu.com/manpages/trusty/man1/arm-none-eabi-strings.1.html) which filters out non-printable characters, and then search for lines containing '=' with [grep](https://manpages.ubuntu.com/manpages/bionic/en/man1/grep.1.html) : 
+{{< highlight bash >}}strings data.txt | grep '==.*'{{< /highlight>}}  
+
+
+The command quickly reveals the password : 
+
+![Level 10 Solution](/posts_images/overthewire-bandit/overthewire-bandit15.png)
+
+---
+
+## {{< theme_text_color >}}Level 11.{{< /theme_text_color >}}
+
+The solution to this level is quite straightforward, as you only need to decode the base-64 encoded content of the file to retrieve the password.  
+You can do this using [base64](https://manpages.ubuntu.com/manpages/bionic/man1/base64.1.html) : 
+
+{{< highlight bash >}}base64 -d data.txt{{< /highlight>}}
+
+---
+
+## {{< theme_text_color >}}Level 12.{{< /theme_text_color >}}
+
+This one is a little bit more tricky, as it refers to the [ROT13 cipher](https://en.wikipedia.org/wiki/ROT13), a simple substitution cipher that shifts letters by 13 places.
+
+A mapping of the cipher would look like this : 
+| {{< theme_text_color >}} Original {{< /theme_text_color >}}  | {{< theme_text_color >}} Shifted (ROT13) {{< /theme_text_color >}}        | 
+| :---------------: |:---------------:|
+| a → n  |   n → a |
+| b → o  | o → b         |  
+| c → p  | p → c          | 
+| ...  | ...        |  
+| m → z  | z → m          |   
+
+This indicated that we will need to use the [tr](https://manpages.ubuntu.com/manpages/trusty/en/man1/tr.1.html) command :
+
+{{< highlight bash >}}cat data.txt | tr 'a-z' 'n-za-m' | tr 'A-Z' 'N-ZA-M'{{< /highlight>}}
+
+{{< theme_text_color >}} Breakdown {{< /theme_text_color >}} : 
+
+- 'a-z' / 'A-Z' respectively represents all lowercase/uppercase letters in order (you could also use [:lower:] and [:upper:]).
+
+- 'n-za-m' / 'N-ZA-M' represents the same letters but shifted by 13 places → the letters a-m move forward by 13 places and the letters n-z wrap around back to the beginning.
+
+---
+
+## {{< theme_text_color >}}Level 13.{{< /theme_text_color >}}
+
+Unlike previous levels, you'll need to create a directory since you will manipulate a few files.  
+The [mktemp](https://manpages.ubuntu.com/manpages/trusty/man1/mktemp.1.html) -d command is used to create a temporary directory with a unique, hard-to-guess name, ensuring that other users on the system cannot easily find or interfere with it. This is useful when working with sensitive files, like the {{< theme_text_color >}}compressed hexdump{{< /theme_text_color >}} in this level.  
+This will return a unique directory path, for example : 
+{{< highlight bash >}}/tmp/tmp.XYZ123{{< /highlight>}}
+
+Once the temporary directory is created, copy the data.txt file into it using [cp](https://manpages.ubuntu.com/manpages/trusty/en/man1/cp.1.html) :
+{{< highlight bash >}}cp data.txt /tmp/tmp.XYZ123{{< /highlight>}}  
+
+You can now head to the temp directory and rename the file we just copied using [mv](https://manpages.ubuntu.com/manpages/bionic/man1/mv.1.html) : 
+{{< highlight bash >}}mv data.txt copy_data.txt{{< /highlight>}} 
+
+The original given file was not a standard compressed file but instead a [hex dump](https://en.wikipedia.org/wiki/Hex_dump).  
+A hex dump is a text-based representation of binary data, where each byte is shown as two hexadecimal digits. While it’s useful for inspecting raw data, a hex dump is not directly executable or decompressible, so we cannot simply use [tar](https://manpages.ubuntu.com/manpages/xenial/man1/tar.1.html), [gzip](https://linux.die.net/man/1/gzip), or [bzip2](https://manpages.ubuntu.com/manpages/jammy/man1/bzip2.1.html) on the hex dump. These tools expect binary files, not text representations.
+
+The proper way to revert a hex dump to its original binary format is using : 
+{{< highlight bash >}}xxd -r data.txt bin_data{{< /highlight>}} 
+
+You then need to go through 7 steps of decompressing :
+
+1. Extracting a {{< theme_text_color >}}.gzip{{< /theme_text_color >}} archive
+2. Extracting a {{< theme_text_color >}}.bzip2{{< /theme_text_color >}} file nested inside
+3. Handling another {{< theme_text_color >}}.gzip{{< /theme_text_color >}} compressed file
+4. Extracting a{{< theme_text_color >}}.tar{{< /theme_text_color >}} compressed file
+5. Another {{< theme_text_color >}}.bzip2{{< /theme_text_color >}} compression
+6. Yet another {{< theme_text_color >}}.tar{{< /theme_text_color >}} archive
+7. Finally, extracting the password from the last decoded {{< theme_text_color >}}gzip{{< /theme_text_color >}} file
+
+Each step required checking the file type using the [file](https://manpages.ubuntu.com/manpages/noble/man1/file.1.html) command and applying the correct decompression method.  
+Note that some compression tools expect a specific file extension.  
+For example, I'm pretty sure gzip expects files to end with .gz or the command won't work, so you'll sometimes need to rename your files with [mv](https://manpages.ubuntu.com/manpages/bionic/man1/mv.1.html).
+
+![Level 13 Solution](/posts_images/overthewire-bandit/overthewire-bandit16.png)
+![Level 13 Solution](/posts_images/overthewire-bandit/overthewire-bandit17.png)
+![Level 13 Solution](/posts_images/overthewire-bandit/overthewire-bandit18.png)
+![Level 13 Solution](/posts_images/overthewire-bandit/overthewire-bandit19.png)
+![Level 13 Solution](/posts_images/overthewire-bandit/overthewire-bandit20.png)
+
+This level is easy but almost drove me to madness due to the sheer number of nested extractions required to retrieve the password.
+
 ---
