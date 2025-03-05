@@ -247,7 +247,7 @@ You then need to go through 7 steps of decompressing :
 
 Each step required checking the file type using the [file](https://manpages.ubuntu.com/manpages/noble/man1/file.1.html) command and applying the correct decompression method.  
 Note that some compression tools expect a specific file extension.  
-For example, I'm pretty sure gzip expects files to end with .gz or the command won't work, so you'll sometimes need to rename your files with [mv](https://manpages.ubuntu.com/manpages/bionic/man1/mv.1.html).
+For example, I'm pretty sure [gzip](https://linux.die.net/man/1/gzip) expects files to end with .gz or the command won't work, so you'll sometimes need to rename your files with [mv](https://manpages.ubuntu.com/manpages/bionic/man1/mv.1.html).
 
 ![Level 13 Solution](/posts_images/overthewire-bandit/overthewire-bandit16.png)
 ![Level 13 Solution](/posts_images/overthewire-bandit/overthewire-bandit17.png)

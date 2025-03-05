@@ -71,7 +71,7 @@ enableRobotsTXT = true
       unsafe = false
       xhtml = false
     [markup.highlight]
-      anchorLineNos = true
+      anchorLineNos = false
       codeFences = true
       guessSyntax = false
       hl_Lines = ''
@@ -81,6 +81,6 @@ enableRobotsTXT = true
       lineNos = false
       lineNumbersInTable = true
       noClasses = true
-      noHl = false
       style = 'monokai'
       tabWidth = 4
+      wrapperClass = 'highlight'

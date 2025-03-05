@@ -18,7 +18,7 @@ That's where {{< theme_text_color >}}hashing{{< /theme_text_color >}}   comes in
 Unlike encryption, which can be reversed with a key, hashing is a {{< theme_text_color >}}one-way process{{< /theme_text_color >}}, your original password is gone forever.
 
 For example if you hash the password "password123" with [SHA-256](https://en.wikipedia.org/wiki/SHA-2), you get : 
-{{< highlight bash >}} ef92b778bafe771e89245b89ecbcf99737512704f77a65a05a8b8d66f79152c4 {{< /highlight>}}
+{{< highlight bash >}} ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f {{< /highlight>}}
 
 No matter how many times you hash "password123", you’ll always get the same result. But even the slightest change (like "Password123") creates a completely different hash.
 
