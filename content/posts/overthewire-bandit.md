@@ -369,7 +369,7 @@ These can be both useful for legitimate purposes (like in this challenge) and po
 
 ## {{< theme_text_color >}}Level 20→21.{{< /theme_text_color >}}
 
-For this challenge, we need to use the binary {{< theme_text_color >}}suconnect{{< /theme_text_color >}} that connects to a given port. If it receives the current level's password, it returns the password for the next level.
+For this level, we need to use the binary {{< theme_text_color >}}suconnect{{< /theme_text_color >}} that connects to a given port. If it receives the current level's password, it returns the password for the next level.
 
 First, we need to set up [tmux](https://manpages.ubuntu.com/manpages/bionic/man1/tmux.1.html) to manage multiple terminal sessions on the server : 
 {{< highlight bash >}}tmux new-session -d -s lvl20
@@ -377,15 +377,28 @@ tmux attach -t lvl20{{< /highlight>}}
 
 ![Level 21 Solution](/posts_images/overthewire-bandit/overthewire-bandit30.png)
 
-Then I check up which ports are free using [netcat](https://manpages.ubuntu.com/manpages/bionic/man1/nc_openbsd.1.html) (the port range 1-65535 represents all available TCP/IP ports on a system) and set up a listener on port 2000 that serves the current password. Meanwhile in another pane, I connected the {{< theme_text_color >}}suconnect{{< /theme_text_color >}} binary to this port. The program verified the password and responded with the next level password.
+Then I check up which ports are free using [netcat](https://manpages.ubuntu.com/manpages/bionic/man1/nc_openbsd.1.html) (the port range 1-65535 represents all available TCP/IP ports on a system) and set up a listener on port 2000 that serves the current password. Meanwhile in another pane, I connected the{{< theme_text_color >}}suconnect{{< /theme_text_color >}} binary to this port. The program verified the password and responded with the next level password.
 
 Setting up [tmux](https://manpages.ubuntu.com/manpages/bionic/man1/tmux.1.html) was crucial because we needed to run two commands simultaneously on the same SSH session. Without tmux, opening a second SSH connection would create a separate session environment where the netcat listener wouldn't be accessible to the first session.
 
 Here are some useful [tmux](https://manpages.ubuntu.com/manpages/bionic/man1/tmux.1.html) keybinds :
-- Ctrl + B + O : switch between panes
-- Ctrl + B + " : divide pane vertically
-- Ctrl + B + % : divide pane horizontally  
+- {{< theme_text_color >}}Ctrl + B + O{{< /theme_text_color >}} : switch between panes
+- {{< theme_text_color >}}Ctrl + B + "{{< /theme_text_color >}} : divide pane vertically
+- {{< theme_text_color >}}Ctrl + B + %{{< /theme_text_color >}} : divide pane horizontally  
 
 ([see more](https://www.redhat.com/en/blog/introduction-tmux-linux))
+
+---
+
+## {{< theme_text_color >}}Level 21→22.{{< /theme_text_color >}}
+
+(switched to {{< theme_text_color >}}Debian{{< /theme_text_color >}} which explains the slight changes in terminal looks)
+
+You first need to look into the [cron jobs](https://en.wikipedia.org/wiki/Cron) by examining the system-wide cron directory :
+
+![Level 22 Solution](/posts_images/overthewire-bandit/overthewire-bandit31.png)
+
+It contains a cron job related to bandit22 and after examining its configuration, it shows that a script runs every minute{{< theme_text_color >}}'* * * * *'{{< /theme_text_color >}} and at system reboot {{< theme_text_color >}}'@reboot'{{< /theme_text_color >}}.  
+The script in question sets permissions{{< theme_text_color >}}644{{< /theme_text_color >}} (readable by everyone) on a file in /tmp and copies the password for next level into that file. Now you simply need to read the indicated file to get the password.
 
 ---
