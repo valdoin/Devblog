@@ -1,12 +1,12 @@
 {{ define "main" }}
 
-<h1>>_about</h1>
+<h1>>_ about</h1>
 
 <p>
 Welcome to my personnal blog. <br> I'll be posting mostly about tech/music oriented stuff. <a href="https://github.com/valdoin/Devblog/" target="_blank">(github repo)</a>
 </p>
 
-<h1><a href="/posts">>_latest posts</a></h1>
+<h1><a href="/posts">>_ latest posts</a></h1>
 
 <div class="posts-list">
 {{ with .Site.GetPage "/posts" }}
@@ -14,7 +14,7 @@ Welcome to my personnal blog. <br> I'll be posting mostly about tech/music orien
         <div class="post">
             <p>
                 <div class="date">{{ .PublishDate.Format "Jan. 2, 2006" }}</div>
-                <h1><a href="{{ .Permalink }}" title="{{ .Title }}">>_{{ .Title }}</a></h1>
+                <h1><a href="{{ .Permalink }}" title="{{ .Title }}">>_ {{ .Title }}</a></h1>
                 <div class="summary">{{ .Summary }}..(reading time ~ {{ .ReadingTime }} mins)</div>
             </p>
         </div>    
@@ -22,7 +22,7 @@ Welcome to my personnal blog. <br> I'll be posting mostly about tech/music orien
 {{ end }}
 </div>
 
-<h1><a href="/albums">>_latest albums recommendations</a></h1>
+<h1><a href="/albums">>_ latest albums recommendations</a></h1>
 
 <div class="albums-list">
     {{ with .Site.GetPage "/albums" }}

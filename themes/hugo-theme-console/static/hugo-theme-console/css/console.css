@@ -98,9 +98,6 @@ a,img,button {
     cursor: url("/assets/Pointer.svg"), pointer;
 }
 
-img {
-    width: 100%;
-}
 
 h1,
 h2,
@@ -212,39 +209,19 @@ figure {
     color: var(--global-font-color);
 }
 
+.post-content img {
+    max-width: 70%;
+}
+
+.post-content h2 {
+    font-size: larger;
+}
+
 .albums-list {
     margin-top: 2rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
     gap: 1em;
-}
-
-@media only screen and (max-width: 850px) {
-    .albums-list {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .language-bash {
-        margin-top: 0.7em;
-    }
-
-    .language-bash span {
-        font-size: 13px;
-    }
-
-    .highlight pre {
-        display: block;
-        white-space: pre;
-        overflow-x:scroll;
-        max-width: 100%;
-    }
-
-    .summary {
-        font-style: italic;
-        left : 0;
-        position: relative;
-    }
-
 }
 
 .album {
@@ -281,10 +258,6 @@ figure {
     max-width: 100%;   
     border-radius: 4px;
 }
-
-
-
-
 
 
 .terminal-prompt::after {
@@ -331,6 +304,36 @@ figure {
 }
 
 @media only screen and (max-width: 850px) {
+
+    .post-content img {
+        max-width: 100%;
+    }
+
+    .albums-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .language-bash {
+        margin-top: 0.7em;
+    }
+
+    .language-bash span {
+        font-size: 13px;
+    }
+
+    .highlight pre {
+        display: block;
+        white-space: pre;
+        overflow-x:scroll;
+        max-width: 100%;
+    }
+
+    .summary {
+        font-style: italic;
+        left : 0;
+        position: relative;
+    }
+
     .terminal-logo {
         flex-direction: column;
         align-items: flex-start;
@@ -383,8 +386,6 @@ figure {
         padding-top: 0;
     }
 
-
-
     .footer {
         margin-top: 50px;
         padding-top: 5px;;
@@ -401,4 +402,5 @@ figure {
     .post-navigation .next-post {
         font-size: 0.9rem; 
     }
+
 }

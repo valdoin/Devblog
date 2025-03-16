@@ -96,7 +96,8 @@ Once you've downloaded or cloned the project, you must run the following scripts
 *NB : it might ask you to change your credentials before launching BeEF, default credentials are both "beef".*
 
 ![BeEF credentials](/posts_images/xss-attacks/xss9.png) 
-![BeEF menu](/posts_images/xss-attacks/xss10.png) 
+![BeEF menu](/posts_images/xss-attacks/xss10.png)
+ 
 In this menu, look for any {{< theme_text_color >}}Hook{{< /theme_text_color >}} URL then copy it. A hook in the BeEF Framework is a piece of JavaScript code that is used to collect data and perform actions in the victim's browser.
 I will now inject this hook in every browser accessing the page we pwned before.
 

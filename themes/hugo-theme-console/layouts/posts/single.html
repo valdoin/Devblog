@@ -8,7 +8,9 @@
 // <a href="{{ . }}">Twitter</a>
 {{ end }}
 <br /><br />
+<div class="post-content">
 {{ .Content }}
+</div>
 <div class="post-navigation">
     {{ if .PrevInSection }}
     <a class="prev-post" href="{{ .PrevInSection.Permalink }}">< {{ .PrevInSection.Title }}</a>

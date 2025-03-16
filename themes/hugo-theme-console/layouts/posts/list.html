@@ -8,7 +8,7 @@
     {{ if not .Params.private }}
         <div class="post">
             <div class="date">{{ .PublishDate.Format "Jan. 2, 2006" }}</div>    
-            <h1><a href="{{ .Permalink }}" title="{{ .Title }}">>_{{ .Title }}</a></h1>
+            <h1><a href="{{ .Permalink }}" title="{{ .Title }}">>_ {{ .Title }}</a></h1>
             <div class = "summary">{{ .Summary }}.. (reading time ~ {{ .ReadingTime }} mins)</div>
         </div>
     {{ end }}
