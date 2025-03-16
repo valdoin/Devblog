@@ -377,9 +377,15 @@ tmux attach -t lvl20{{< /highlight>}}
 
 ![Level 21 Solution](/posts_images/overthewire-bandit/overthewire-bandit30.png)
 
-Then I check up which ports are free using [netcat](https://manpages.ubuntu.com/manpages/bionic/man1/nc_openbsd.1.html) and set up a listener on port 2000 that serves the current password. Meanwhile in another pane, I connected the {{< theme_text_color >}}suconnect{{< /theme_text_color >}} binary to this port. The program verified the password and responded with the next level password.
+Then I check up which ports are free using [netcat](https://manpages.ubuntu.com/manpages/bionic/man1/nc_openbsd.1.html) (the port range 1-65535 represents all available TCP/IP ports on a system) and set up a listener on port 2000 that serves the current password. Meanwhile in another pane, I connected the {{< theme_text_color >}}suconnect{{< /theme_text_color >}} binary to this port. The program verified the password and responded with the next level password.
 
 Setting up [tmux](https://manpages.ubuntu.com/manpages/bionic/man1/tmux.1.html) was crucial because we needed to run two commands simultaneously on the same SSH session. Without tmux, opening a second SSH connection would create a separate session environment where the netcat listener wouldn't be accessible to the first session.
 
+Here are some useful [tmux](https://manpages.ubuntu.com/manpages/bionic/man1/tmux.1.html) keybinds :
+- Ctrl + B + O : switch between panes
+- Ctrl + B + " : divide pane vertically
+- Ctrl + B + % : divide pane horizontally  
+
+([see more](https://www.redhat.com/en/blog/introduction-tmux-linux))
 
 ---
