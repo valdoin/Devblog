@@ -392,7 +392,7 @@ Here are some useful [tmux](https://manpages.ubuntu.com/manpages/bionic/man1/tmu
 
 ## {{< theme_text_color >}}Level 21→22.{{< /theme_text_color >}}
 
-(switched to {{< theme_text_color >}}Debian{{< /theme_text_color >}} which explains the slight changes in terminal looks)
+(switched to [Kali](https://www.kali.org/) which explains the slight changes in terminal looks)
 
 You first need to look into the [cron jobs](https://en.wikipedia.org/wiki/Cron) by examining the system-wide cron directory :
 
