@@ -154,6 +154,7 @@ h1 {
     border: none !important;
     border-radius: 0 !important;
     box-shadow: none !important;
+    font-size: 13px;
 }
 
 .gist .gist-file,
