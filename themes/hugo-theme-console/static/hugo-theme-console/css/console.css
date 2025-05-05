@@ -170,6 +170,7 @@ h1 {
     display: block !important;
     padding: 16px !important;
     font-family: 'Consolas', 'Monaco', 'Menlo', monospace !important;
+    background-color: #212020 !important;
 }
 
 .gist .blob-code {
@@ -189,6 +190,36 @@ h1 {
 .gist .gist-file {
     overflow: hidden !important;
     border-radius: 0 !important;
+}
+
+.gist .gist-file {
+    border: 2px solid white !important;
+    border-radius: 5px !important;
+}
+
+.gist .gist-meta a:hover {
+    color: #ffffff !important;
+}
+
+.gist h1,
+.gist h2,
+.gist h3,
+.gist h4,
+.gist h5,
+.gist h6 {
+    font-family: 'Segoe UI', sans-serif !important;
+    margin-top: 0.25em !important;
+    margin-bottom: 0.25em !important;
+}
+
+.gist strong {
+    font-family: 'Segoe UI', sans-serif !important;
+}
+
+.gist p {
+    margin-top: 1em !important;
+    margin-bottom: 1em !important;
+    line-height: 1.5 !important;
 }
 
 
