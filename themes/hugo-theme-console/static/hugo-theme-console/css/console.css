@@ -75,26 +75,28 @@ body {
     font-size: var(--global-font-size);
     background-color: #121212;
     margin-bottom: 75px;
-    cursor : url("/assets/Cursor.svg"), auto;
+    cursor: url("/assets/Cursor.svg"), auto;
 }
 
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: #2c2c2c;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: #246A73;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: #19565e;
-  }
+}
 
-a,img,button {
+::-webkit-scrollbar-track {
+    background: #2c2c2c;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #246A73;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #19565e;
+}
+
+a,
+img,
+button {
     cursor: url("/assets/Pointer.svg"), pointer;
 }
 
@@ -127,8 +129,66 @@ h1 {
 
 
 .highlight pre {
-    display: inline-block; 
+    display: inline-block;
     white-space: nowrap;
+}
+
+
+.gist {
+    margin: 2rem 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.gist .gist-file,
+.gist .gist-file .gist-data,
+.gist .gist-file .gist-data .highlight,
+.gist .gist-file .gist-data .highlight pre,
+.gist .gist-meta,
+.gist .blob-wrapper,
+.gist .blob-num,
+.gist .blob-code,
+.gist table,
+.gist tr,
+.gist td {
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.gist .gist-file,
+.gist .gist-file .gist-data,
+.gist .gist-file .gist-data .highlight pre {
+    background-color: #121212 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.gist .gist-file .gist-data .highlight pre {
+    color: #f8f8f2 !important;
+    white-space: pre !important;
+    display: block !important;
+    padding: 16px !important;
+    font-family: 'Consolas', 'Monaco', 'Menlo', monospace !important;
+}
+
+.gist .blob-code {
+    padding-left: 20px !important;
+}
+
+.gist-meta {
+    background-color: #1e1e1e !important;
+    color: #7c7c7c !important;
+    padding: 8px 16px !important;
+}
+
+.gist-meta a {
+    color: #246A73 !important;
+}
+
+.gist .gist-file {
+    overflow: hidden !important;
+    border-radius: 0 !important;
 }
 
 
@@ -139,7 +199,7 @@ h1 {
 
 .summary {
     font-style: italic;
-    left : 1em;
+    left: 1em;
     position: relative;
 }
 
@@ -204,7 +264,8 @@ figure {
 .footer {
     clear: both;
     margin-top: 75px;
-    padding-top: 10px;;
+    padding-top: 10px;
+    ;
     border-top: 1px solid var(--secondary-color);
     color: var(--global-font-color);
 }
@@ -220,7 +281,7 @@ figure {
 .albums-list {
     margin-top: 2rem;
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(4, 1fr);
     gap: 1em;
 }
 
@@ -244,7 +305,7 @@ figure {
 .album h2 {
     font-size: 1.2em;
     margin-bottom: 0.5em;
-    color: #ffffff; 
+    color: #ffffff;
     overflow: hidden;
 }
 
@@ -255,7 +316,7 @@ figure {
 }
 
 .album img {
-    max-width: 100%;   
+    max-width: 100%;
     border-radius: 4px;
 }
 
@@ -280,9 +341,10 @@ figure {
     top: 0;
 }
 
-.post h1, .post h2 {
+.post h1,
+.post h2 {
     padding-top: 0;
-    left : 1em;
+    left: 1em;
     margin-bottom: 5px;
 }
 
@@ -324,13 +386,13 @@ figure {
     .highlight pre {
         display: block;
         white-space: pre;
-        overflow-x:scroll;
+        overflow-x: scroll;
         max-width: 100%;
     }
 
     .summary {
         font-style: italic;
-        left : 0;
+        left: 0;
         position: relative;
     }
 
@@ -371,7 +433,8 @@ figure {
         top: 0;
     }
 
-    .post h1, .post h2 {
+    .post h1,
+    .post h2 {
         padding-top: 0;
         left: 0;
     }
@@ -380,7 +443,7 @@ figure {
         display: block;
         position: relative;
         margin-left: 0;
-        margin-top: 0.5em; 
+        margin-top: 0.5em;
         margin-bottom: 0.5em;
         font-weight: bold;
         padding-top: 0;
@@ -388,19 +451,20 @@ figure {
 
     .footer {
         margin-top: 50px;
-        padding-top: 5px;;
+        padding-top: 5px;
+        ;
     }
 
     .post-navigation {
         flex-direction: column;
         align-items: center;
         gap: 1em;
-        margin-top: 1rem; 
+        margin-top: 1rem;
     }
 
     .post-navigation .prev-post,
     .post-navigation .next-post {
-        font-size: 0.9rem; 
+        font-size: 0.9rem;
     }
 
 }
